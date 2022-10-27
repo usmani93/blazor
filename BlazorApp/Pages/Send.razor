@@ -1,0 +1,22 @@
+﻿@page "/send"
+
+<h3>Send</h3>
+
+<h4>Stream</h4>
+
+<input placeholder="Host IP" @bind="hostIp" />
+<button @onclick="SendStream">Send Stream</button>
+
+
+@code {
+    private SendItem sent = new();
+    private string? hostIp;
+
+    private void SendStream()
+    {
+        if(!string.IsNullOrWhiteSpace(hostIp))
+        {
+            sent.Title = hostIp;
+        }
+    }
+}

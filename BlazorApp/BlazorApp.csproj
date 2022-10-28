@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ClientLibrary">
+      <HintPath>..\..\ClientLibrary\bin\Debug\ClientLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

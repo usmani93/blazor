@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "aloUP9r2kwfizkY6N+LBjvfgzBFpf/fb8dqFp9v4GUwL7/nnNMwrd5hZIQPfZKx6/SaWB+b3/3nwRJ2NQQfKow==",
+  "dgSpecHash": "Qi2WNVGUoA4FlvG6f+8V2C+d86Hw5EqlChwNfX0MoYJBAig3Jzn6w9/HRBN1MLnQrYboSvYiRvE/bC0IuX2sFQ==",
   "success": true,
-  "projectFilePath": "/home/mohammad/demo/blazor/BlazorApp/BlazorApp.csproj",
+  "projectFilePath": "C:\\Users\\Sami\\source\\repos\\blazor\\BlazorApp\\BlazorApp.csproj",
   "expectedPackageFiles": [
-    "/home/mohammad/.nuget/packages/rabbitmq.client/6.4.0/rabbitmq.client.6.4.0.nupkg.sha512",
-    "/home/mohammad/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
-    "/home/mohammad/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512"
+    "C:\\Users\\Sami\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sami\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\Sami\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sami\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Sami\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,22 +1,79 @@
 ﻿@page "/send"
+@using System.Drawing
+@using ClientLibrary
+
+@inject HttpClient Http
+@inject IJSRuntime JS
 
 <h3>Send</h3>
 
 <h4>Stream</h4>
 
 <input placeholder="Host IP" @bind="hostIp" />
-<button @onclick="SendStream">Send Stream</button>
+<button @onclick="ReceiveStream">Receive Stream</button>
 
+<img src="@ImageToShow" />
+<video src="@ImageToShow" />
 
 @code {
     private SendItem sent = new();
-    private string? hostIp;
+    private string? hostIp = "192.168.0.103";
+    private string? ImageToShow;
 
-    private void SendStream()
+    private void ReceiveStream()
     {
-        if(!string.IsNullOrWhiteSpace(hostIp))
+        if (!string.IsNullOrWhiteSpace(hostIp))
         {
             sent.Title = hostIp;
+            try
+            {
+                Connect();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
+
+    }
+
+    void Connect()
+    {
+        Receive receive = new Receive();
+        receive.SetupConnection(hostIp);
+        receive.ReceiveMessageInitialize("hello");
+        receive.DataReceived += GetSetImage;
+    }
+
+    private void GetSetImage(string message)
+    {
+        try
+        {
+            ImageToShow = "data:image/webp;base64," + message;
+            //MemoryStream ms = new MemoryStream();
+            //var imageBuffer = Convert.FromBase64String(message);
+            //ms.Write(imageBuffer, 0, imageBuffer.Length);
+            //SetImageInPictureBox(ms);
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
+    public async void SetImageInPictureBox(MemoryStream imageStream)
+    {
+        //var ImageToShow = Image.FromStream(imageStream);
+        //var dotnetImageStream = new DotNetStreamReference(imageStream);
+        //await JS.InvokeVoidAsync("setImage", "image", ImageToShow);
+        //if (pictureBox1.InvokeRequired)
+        //{
+        //    var d = new SafeCallDelegate(SetImageInPictureBox);
+        //    pictureBox1.Invoke(d, new object[] { imageStream });
+        //}
+        //else
+        //{
+        //    pictureBox1.Image = Image.FromStream(imageStream);
+        //}
     }
 }
